@@ -9,7 +9,7 @@
     "lint:eslint": "npx --node-options='--experimental-strip-types' eslint --max-warnings=0 --flag unstable_ts_config",
     "format:prettier": "prettier --write .",
     "prepare": "lefthook install",
-    "build": "tsc --erasableSyntaxOnly",
+    "build": "tsgo --erasableSyntaxOnly",
     "build:watch": "bun run build --watch",
     "node": "node --experimental-strip-types --no-deprecation --no-warnings",
     "find-circular-imports": "madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
@@ -24,7 +24,6 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "jiti": "^2.4.2",
     "@biomejs/biome": "2.0.0",
     "@dotenvx/dotenvx": "^1.36.0",
     "@eslint/js": "^9.17.0",
@@ -36,6 +35,7 @@
     "@types/madge": "^5.0.3",
     "@types/node": "22.9.3",
     "@types/node-cleanup": "^2.1.5",
+    "@typescript/native-preview": "^7.0.0-dev.20250620.1",
     "eslint": "9.10.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-typescript": "^3.7.0",
@@ -44,6 +44,7 @@
     "eslint-plugin-no-await-in-promise": "^2.0.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "find-root": "^1.1.0",
+    "jiti": "^2.4.2",
     "lefthook": "^1.11.6",
     "madge": "8.0.0",
     "nock": "^13.5.6",

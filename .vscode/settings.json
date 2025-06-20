@@ -1,4 +1,5 @@
 {
+  "typescript.tsdk": "./node_modules/typescript/lib",
   "eslint.nodePath": "/nix/store/9nppfnny8z0wq5q3rq6hbh9jxg962f3b-nodejs-slim-24.0.0/bin/node",
   "debug.javascript.autoAttachFilter": "smart",
   "eslint.options": {
@@ -19,7 +20,6 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.scrollback": 9328937423768,
-  "typescript.tsdk": "./node_modules/typescript/lib",
   "nodejs-testing.nodejsPath": "/nix/store/9nppfnny8z0wq5q3rq6hbh9jxg962f3b-nodejs-slim-24.0.0/bin/node",
   "nodejs-testing.extensions": [
     {
