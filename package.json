@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint:biome": "./node_modules/.bin/biome lint .",
     "lint:eslint": "NODE_OPTIONS=--max-old-space-size=8192 ./node_modules/.bin/eslint --max-warnings=0 --flag unstable_ts_config",

@@ -1,4 +1,6 @@
 {
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules", ".devbox"],
   "compilerOptions": {
     "noEmit": true,
     "incremental": true,
@@ -19,6 +21,15 @@
     "noImplicitAny": true,
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
-    "noImplicitOverride": true
+    "strict": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   }
 }

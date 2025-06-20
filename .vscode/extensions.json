@@ -1,17 +1,9 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "mrkou47.thrift-syntax-support",
     "redhat.vscode-yaml",
     "orta.vscode-jest",
     "github.copilot",
-    "esbenp.prettier-vscode",
-    "biomejs.biome",
-    "textualize.textual-syntax-highlighter",
-    "nefrob.vscode-just-syntax",
-    "ms-python.python",
-    "ms-python.vscode-pylance",
-    "textualize.textual-syntax-highlighter",
-    "tamasfe.even-better-toml"
+    "biomejs.biome"
   ]
 }
