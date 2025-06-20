@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lefthook.json
+
+lefthook: packages/devex/run-lefthook.sh
+
+pre-commit:
+  commands:
+    linter:biome:
+      run: ./node_modules/.bin/biome lint --write --no-errors-on-unmatched {staged_files}
+      stage_fixed: true
+      glob: "*.{ts,js,json}"
+    linter:no-circular-imports:
+      run: node --run find-circular-imports
+      glob: "*.{ts,js,json}"
+
+pre-checkout:
+  commands:
+    include-shared-gitconfig:
+      run: git config --global include.path "$(pwd)/devex/shared.gitconfig"
+
+pre-rewrite:
+  commands:
+    include-shared-gitconfig:
+      run: git config --global include.path "$(pwd)/devex/shared.gitconfig"

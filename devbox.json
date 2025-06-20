@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
+  "name": "limbo",
+  "packages": {
+    "git": "2.47.2",
+    "fzf": "latest",
+    "tree": "latest",
+    "jq": "latest",
+    "goss": "latest",
+    "killport": "latest",
+    "bun": "latest",
+    "fd": "latest",
+    "goreman": "0.3.16",
+    "gawkInteractive": "latest",
+    "pstree": "latest",
+    "nodejs-slim": "22.10.0",
+    "netcat": "latest",
+    "htop": "latest",
+    "procs": "latest",
+    "ripgrep": "latest",
+    "gh": "latest"
+  },
+  "env_from": ".env",
+  "env": {
+    "NIXPKGS_ALLOW_UNFREE": "1"
+  }
+}

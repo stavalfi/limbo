@@ -1,0 +1,47 @@
+{
+  "name": "limbo",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint:biome": "./node_modules/.bin/biome lint .",
+    "lint:eslint": "npm run lint:eslint:ci",
+    "lint:oxc": "./node_modules/.bin/oxlint --config devex/.oxlintrc.jsonc --max-warnings 0 --ignore-path devex/.oxcignore",
+    "prepare": "lefthook install",
+    "postinstall": "./node_modules/.bin/patch-package",
+    "find-circular-imports": "./node_modules/.bin/madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.venv|.devbox' * && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "find-root": "^1.1.0",
+    "@biomejs/biome": "1.9.5-nightly.81fdedb",
+    "@dotenvx/dotenvx": "^1.36.0",
+    "@eslint/js": "^9.17.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/find-root": "^1.1.4",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/lodash": "^4.17.9",
+    "@types/madge": "^5.0.3",
+    "@types/node": "22.9.3",
+    "@types/node-cleanup": "^2.1.5",
+    "@vitest/eslint-plugin": "^1.1.21",
+    "eslint": "9.10.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-github": "^5.1.4",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-no-await-in-promise": "^2.0.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "lefthook": "^1.11.6",
+    "madge": "8.0.0",
+    "nock": "^13.5.6",
+    "node-cleanup": "^2.1.2",
+    "oxlint": "^0.10.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "8.33.1",
+    "utility-types": "^3.11.0"
+  }
+}
