@@ -1,14 +1,14 @@
 import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
 import vitest from "@vitest/eslint-plugin";
-// @ts-ignore
-import importPlugin from "eslint-plugin-import";
+import prettierConfig from "eslint-config-prettier";
 // @ts-ignore
 import githubPlugin from "eslint-plugin-github";
-import prettierConfig from "eslint-config-prettier";
+// @ts-ignore
+import importPlugin from "eslint-plugin-import";
 import noAwaitInPromisePlugin from "eslint-plugin-no-await-in-promise";
 import unusedImports from "eslint-plugin-unused-imports";
 import { dirname } from "path";
+import tseslint from "typescript-eslint";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

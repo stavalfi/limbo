@@ -1,0 +1,83 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "assist": {
+    "actions": { "source": { "organizeImports": "on", "useSortedKeys": "off" } }
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**/*", "!node_modules", "!.devbox"]
+  },
+  "formatter": {
+    "attributePosition": "auto",
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "tab",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "complexity": {
+        "noCommaOperator": "error",
+        "noUselessCatch": "error",
+        "noUselessEmptyExport": "error",
+        "noUselessEscapeInRegex": "off",
+        "noUselessLabel": "error",
+        "noUselessRename": "error",
+        "noUselessStringConcat": "error",
+        "noUselessSwitchCase": "error",
+        "noUselessTernary": "error",
+        "useDateNow": "error",
+        "useFlatMap": "error",
+        "useLiteralKeys": "off"
+      },
+      "correctness": {
+        "noConstructorReturn": "error",
+        "noInvalidUseBeforeDeclaration": "error",
+        "noPrecisionLoss": "error",
+        "noUnusedImports": "off",
+        "noUnusedLabels": "error",
+        "noUnusedPrivateClassMembers": "error",
+        "noUnusedVariables": "off",
+        "useExhaustiveDependencies": "error",
+        "useValidTypeof": "error",
+        "useYield": "error"
+      },
+      "nursery": {},
+      "recommended": false,
+      "security": {
+        "noGlobalEval": "error"
+      },
+      "style": {
+        "noNestedTernary": "error",
+        "useBlockStatements": "error",
+        "useConsistentBuiltinInstantiation": "error",
+        "useDefaultParameterLast": "off",
+        "useForOf": "error",
+        "useThrowOnlyError": "error"
+      },
+      "suspicious": {
+        "noAsyncPromiseExecutor": "error",
+        "noConfusingLabels": "error",
+        "noDuplicateCase": "error",
+        "noExportsInTest": "error",
+        "noImplicitAnyLet": "error",
+        "noSelfCompare": "error",
+        "noTemplateCurlyInString": "error",
+        "noVar": "error"
+      }
+    }
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true
+  }
+}

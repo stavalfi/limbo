@@ -5,10 +5,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint:biome": "./node_modules/.bin/biome lint .",
-    "lint:eslint": "NODE_OPTIONS=--max-old-space-size=8192 ./node_modules/.bin/eslint --max-warnings=0 --flag unstable_ts_config",
+    "lint:biome": "biome lint .",
+    "lint:eslint": "eslint --max-warnings=0 --flag unstable_ts_config",
     "prepare": "lefthook install",
-    "find-circular-imports": "./node_modules/.bin/madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
+    "build": "tsc --erasableSyntaxOnly",
+    "node": "node --experimental-strip-types --no-deprecation --no-warnings",
+    "find-circular-imports": "madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
   },
   "dependencies": {
     "lodash": "^4.17.21"
