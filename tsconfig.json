@@ -1,6 +1,6 @@
 {
   "$schema": "https://www.schemastore.org/tsconfig.json",
-  "include": ["packages/**/*"],
+  "include": ["packages/**/*", "eslint.config.ts"],
   "exclude": ["node_modules", ".devbox"],
   "compilerOptions": {
     "tsBuildInfoFile": "output/.tsbuildinfo",

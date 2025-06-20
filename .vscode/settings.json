@@ -1,13 +1,14 @@
 {
-  "[jsonc,json,js,ts,tsx,html,css,scss,md]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "biome.enabled": true,
+  "eslint.nodePath": "/nix/store/9nppfnny8z0wq5q3rq6hbh9jxg962f3b-nodejs-slim-24.0.0/bin/node",
   "debug.javascript.autoAttachFilter": "smart",
+  "eslint.options": {
+    "flags": ["unstable_ts_config"]
+  },
   "editor.codeActionsOnSave": {
     "source.action.organizeImports.biome": "explicit",
     "source.fixAll.biome": "explicit"
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
   "explorer.confirmDelete": false,

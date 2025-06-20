@@ -1,29 +1,25 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import eslint from "@eslint/js";
-import vitest from "@vitest/eslint-plugin";
 import prettierConfig from "eslint-config-prettier";
-// @ts-ignore
+// @ts-expect-error - .
 import githubPlugin from "eslint-plugin-github";
-// @ts-ignore
+// @ts-expect-error - .
 import importPlugin from "eslint-plugin-import";
 import noAwaitInPromisePlugin from "eslint-plugin-no-await-in-promise";
 import unusedImports from "eslint-plugin-unused-imports";
-import { dirname } from "path";
-import tseslint from "typescript-eslint";
-import { fileURLToPath } from "url";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import { config, configs } from "typescript-eslint";
 
 // config for example: https://github.com/typescript-eslint/typescript-eslint/blob/main/eslint.config.mjs
-export default tseslint.config(
+export default config(
   prettierConfig,
   {
     languageOptions: {
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: __dirname,
-        ecmaFeatures: {
-          jsx: true,
-        },
+        tsconfigRootDir: import.meta.dirname,
       },
     },
     settings: {
@@ -35,31 +31,22 @@ export default tseslint.config(
     plugins: {
       github: githubPlugin,
       "no-await-in-promise": noAwaitInPromisePlugin,
-      // @ts-ignore
-      vitest,
       "unused-imports": unusedImports,
     },
   },
   // extends ...
   importPlugin.flatConfigs.recommended,
   eslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
+  configs.recommendedTypeChecked,
   {
     ignores: ["**/*.json"],
-    // base config
     rules: {
-      // @ts-ignore
-      ...vitest.configs.recommended.rules,
-      "vitest/valid-expect": ["error", { maxArgs: 3 }],
-      "vitest/no-import-node-test": "error",
-      "vitest/expect-expect": "error",
-      "vitest/valid-title": "error",
       "no-unused-vars": "error", // or "@typescript-eslint/no-unused-vars": "error",
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": "error",
-      "require-await": "error", // must be disabled to make @typescript-eslint/require-await work
+      "require-await": "off", // must be disabled to make @typescript-eslint/require-await work
       "@typescript-eslint/require-await": "error",
-      "@typescript-eslint/only-throw-error": "error", // migrated to biome
+      "@typescript-eslint/only-throw-error": "off", // migrated to biome
       "import/no-duplicates": "error",
       "import/no-named-as-default-member": "error",
       "import/no-named-as-default": "error",
@@ -75,7 +62,7 @@ export default tseslint.config(
       "@typescript-eslint/no-unsafe-member-access": "error",
       "@typescript-eslint/no-unused-expressions": "error",
       "import/no-cycle": "error",
-      "import/namespace": "error", // typescript is doing it already
+      "import/namespace": "off", // typescript is doing it already
       "@typescript-eslint/no-misused-promises": [
         "error",
         {
@@ -147,5 +134,5 @@ export default tseslint.config(
       "no-await-in-promise/no-await-in-promise": "error",
       "github/array-foreach": "error",
     },
-  }
+  },
 );
