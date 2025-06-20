@@ -12,6 +12,10 @@
     "node": "node --experimental-strip-types --no-deprecation --no-warnings",
     "find-circular-imports": "madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
   },
+  "imports": {
+    "#libs/lib1": "./packages/libs/lib1/index.ts",
+    "#libs/lib2": "./packages/libs/lib2/index.ts"
+  },
   "dependencies": {
     "lodash": "^4.17.21"
   },
