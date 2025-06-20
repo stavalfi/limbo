@@ -15,9 +15,13 @@ pre-commit:
 pre-checkout:
   commands:
     include-shared-gitconfig:
-      run: git config --global include.path "$(pwd)/devex/shared.gitconfig"
+      run: git config --global include.path "$(pwd)/packages/devex/shared.gitconfig"
+    install-bun-dependencies:
+      run: bun install
 
 pre-rewrite:
   commands:
     include-shared-gitconfig:
-      run: git config --global include.path "$(pwd)/devex/shared.gitconfig"
+      run: git config --global include.path "$(pwd)/packages/devex/shared.gitconfig"
+    install-bun-dependencies:
+      run: bun install
