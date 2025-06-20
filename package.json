@@ -5,13 +5,14 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "node": "node --experimental-strip-types --no-deprecation --no-warnings",
     "lint:biome": "biome lint .",
     "lint:eslint": "npx --node-options='--experimental-strip-types' eslint --max-warnings=0 --flag unstable_ts_config",
     "format:prettier": "prettier --write .",
     "prepare": "lefthook install",
+    "generate-all-swagger-apis": "bun run node ./packages/libs/devex/src/generate-all-swagger-apis.ts",
     "build": "tsgo --erasableSyntaxOnly",
     "build:watch": "bun run build --watch",
-    "node": "node --experimental-strip-types --no-deprecation --no-warnings",
     "find-circular-imports": "madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
   },
   "imports": {
@@ -51,6 +52,7 @@
     "node-cleanup": "^2.1.2",
     "npm": "^11.4.2",
     "oxlint": "^0.10.2",
+    "swagger-typescript-api": "^13.2.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "8.33.1",
     "utility-types": "^3.11.0"
