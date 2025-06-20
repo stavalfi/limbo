@@ -15,9 +15,10 @@
     "find-circular-imports": "madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
   },
   "imports": {
-    "#libs/lib1": "./packages/libs/lib1/index.ts",
+    "#libs/*": "./packages/libs/lib1/index.ts",
     "#libs/lib2": "./packages/libs/lib2/index.ts",
-    "#libs/devex": "./packages/libs/devex/index.ts"
+    "#libs/devex": "./packages/libs/devex/index.ts",
+    "#libs/unit-test-infra": "./packages/libs/unit-test-infra/index.ts"
   },
   "dependencies": {
     "lodash": "^4.17.21"

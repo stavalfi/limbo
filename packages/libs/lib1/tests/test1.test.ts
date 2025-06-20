@@ -1,5 +1,8 @@
 import assert from "node:assert";
 import test, { describe, it } from "node:test";
+import { setupUnitTests } from "#libs/unit-test-infra";
+
+setupUnitTests();
 
 await test("synchronous passing test", () => {
   assert.strict.strictEqual(1, 1);

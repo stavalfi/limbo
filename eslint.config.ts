@@ -43,13 +43,13 @@ export default config(
   {
     ignores: ["**/*.json"],
     rules: {
+      "import/no-named-as-default-member": "off",
       "unused-imports/no-unused-vars": "error",
       "unused-imports/no-unused-imports": "error",
       "require-await": "off", // must be disabled to make @typescript-eslint/require-await work
       "@typescript-eslint/require-await": "error",
       "@typescript-eslint/only-throw-error": "off", // migrated to biome
       "import/no-duplicates": "error",
-      "import/no-named-as-default-member": "error",
       "import/no-named-as-default": "error",
       "import/named": "error",
       "no-mixed-spaces-and-tabs": "error",
