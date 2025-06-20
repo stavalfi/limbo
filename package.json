@@ -9,6 +9,7 @@
     "lint:eslint": "eslint --max-warnings=0 --flag unstable_ts_config",
     "prepare": "lefthook install",
     "build": "tsc --erasableSyntaxOnly",
+    "build:watch": "bun run build --watch",
     "node": "node --experimental-strip-types --no-deprecation --no-warnings",
     "find-circular-imports": "madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
   },
