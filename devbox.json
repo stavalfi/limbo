@@ -13,7 +13,7 @@
     "goreman": "0.3.16",
     "gawkInteractive": "latest",
     "pstree": "latest",
-    "nodejs-slim": "22.10.0",
+    "nodejs-slim": "24.0.0",
     "netcat": "latest",
     "htop": "latest",
     "procs": "latest",

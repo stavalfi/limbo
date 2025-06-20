@@ -1,3 +1,3 @@
 set -e
 
-devbox run lefthook "$@"
+devbox run bunx lefthook "$@"

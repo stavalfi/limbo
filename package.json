@@ -5,22 +5,19 @@
   "private": true,
   "scripts": {
     "lint:biome": "./node_modules/.bin/biome lint .",
-    "lint:eslint": "npm run lint:eslint:ci",
-    "lint:oxc": "./node_modules/.bin/oxlint --config devex/.oxlintrc.jsonc --max-warnings 0 --ignore-path devex/.oxcignore",
+    "lint:eslint": "NODE_OPTIONS=--max-old-space-size=8192 ./node_modules/.bin/eslint --max-warnings=0 --flag unstable_ts_config",
     "prepare": "lefthook install",
-    "postinstall": "./node_modules/.bin/patch-package",
-    "find-circular-imports": "./node_modules/.bin/madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.venv|.devbox' * && exit 1"
+    "find-circular-imports": "./node_modules/.bin/madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
   },
   "dependencies": {
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "find-root": "^1.1.0",
-    "@biomejs/biome": "1.9.5-nightly.81fdedb",
+    "@biomejs/biome": "2.0.0",
     "@dotenvx/dotenvx": "^1.36.0",
     "@eslint/js": "^9.17.0",
-    "@types/eslint__js": "^8.42.3",
     "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
     "@types/find-root": "^1.1.4",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/lodash": "^4.17.9",
@@ -35,10 +32,12 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-no-await-in-promise": "^2.0.1",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "find-root": "^1.1.0",
     "lefthook": "^1.11.6",
     "madge": "8.0.0",
     "nock": "^13.5.6",
     "node-cleanup": "^2.1.2",
+    "npm": "^11.4.2",
     "oxlint": "^0.10.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "8.33.1",
