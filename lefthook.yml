@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/lefthook.json
 
-lefthook: packages/devex/run-lefthook.sh
+lefthook: packages/repo-configs/run-lefthook.sh
 
 pre-commit:
   commands:
@@ -15,13 +15,13 @@ pre-commit:
 pre-checkout:
   commands:
     include-shared-gitconfig:
-      run: git config --global include.path "$(pwd)/packages/devex/shared.gitconfig"
+      run: git config --global include.path "$(pwd)/packages/repo-configs/shared.gitconfig"
     install-bun-dependencies:
       run: bun install
 
 pre-rewrite:
   commands:
     include-shared-gitconfig:
-      run: git config --global include.path "$(pwd)/packages/devex/shared.gitconfig"
+      run: git config --global include.path "$(pwd)/packages/repo-configs/shared.gitconfig"
     install-bun-dependencies:
       run: bun install

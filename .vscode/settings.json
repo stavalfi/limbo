@@ -8,7 +8,6 @@
     "source.action.organizeImports.biome": "explicit",
     "source.fixAll.biome": "explicit"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
   "explorer.confirmDelete": false,
@@ -19,5 +18,16 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.scrollback": 9328937423768,
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "nodejs-testing.nodejsPath": "/nix/store/9nppfnny8z0wq5q3rq6hbh9jxg962f3b-nodejs-slim-24.0.0/bin/node",
+  "nodejs-testing.extensions": [
+    {
+      "extensions": ["ts"],
+      "parameters": [
+        "--experimental-strip-types",
+        "--no-deprecation",
+        "--no-warnings"
+      ]
+    }
+  ]
 }

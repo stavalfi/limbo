@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -e
-
-echo "please use bunx"
-exit 1

@@ -15,7 +15,8 @@
   },
   "imports": {
     "#libs/lib1": "./packages/libs/lib1/index.ts",
-    "#libs/lib2": "./packages/libs/lib2/index.ts"
+    "#libs/lib2": "./packages/libs/lib2/index.ts",
+    "#libs/devex": "./packages/libs/devex/index.ts"
   },
   "dependencies": {
     "lodash": "^4.17.21"
