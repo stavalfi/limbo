@@ -4,9 +4,9 @@
 
 import eslint from "@eslint/js";
 import prettierConfig from "eslint-config-prettier";
-// @ts-expect-error - .
+// @ts-expect-error - blablabla
 import githubPlugin from "eslint-plugin-github";
-// @ts-expect-error - .
+// @ts-expect-error - blablabla
 import importPlugin from "eslint-plugin-import";
 import noAwaitInPromisePlugin from "eslint-plugin-no-await-in-promise";
 import unusedImports from "eslint-plugin-unused-imports";
@@ -38,12 +38,13 @@ export default config(
   importPlugin.flatConfigs.recommended,
   eslint.configs.recommended,
   configs.recommendedTypeChecked,
+  configs.strict,
+  configs.strictTypeChecked,
   {
     ignores: ["**/*.json"],
     rules: {
-      "no-unused-vars": "error", // or "@typescript-eslint/no-unused-vars": "error",
-      "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": "error",
+      "unused-imports/no-unused-imports": "error",
       "require-await": "off", // must be disabled to make @typescript-eslint/require-await work
       "@typescript-eslint/require-await": "error",
       "@typescript-eslint/only-throw-error": "off", // migrated to biome
@@ -78,13 +79,6 @@ export default config(
         {
           prefer: "type-imports",
           fixStyle: "inline-type-imports",
-        },
-      ],
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          args: "none", //Ignore unused arguments because we have many valid cases, such as ab-test.getUserGroup(user) and user is often unused
-          varsIgnorePattern: "^_|^[A-Z]$", //allow the the variable prefix "_" to be unused since it's very deliberate. Allow <infer T>... definitions to un-use T.
         },
       ],
       "@typescript-eslint/unbound-method": "error",
