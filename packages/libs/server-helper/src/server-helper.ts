@@ -4,11 +4,9 @@ import { swaggerUI } from "@hono/swagger-ui";
 import { OpenAPIHono } from "@hono/zod-openapi";
 
 export class ServerHelper {
-  public readonly app: OpenAPIHono;
+  public readonly app: OpenAPIHono = new OpenAPIHono({ strict: true });
 
   constructor(appName: string) {
-    this.app = new OpenAPIHono({ strict: true });
-
     this.app.get(
       "/ui",
       swaggerUI({

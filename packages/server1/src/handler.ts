@@ -1,15 +1,14 @@
-import { type ServerHelper } from "#libs/server-helper";
 import { createRoute, z } from "@hono/zod-openapi";
+import { type ServerHelper } from "#libs/server-helper";
 
 export class Server1Handler {
-  public readonly server: ServerHelper;
-
-  constructor(server: ServerHelper) {
-    this.server = server;
+  public readonly serverHelper: ServerHelper;
+  constructor(serverHelper: ServerHelper) {
+    this.serverHelper = serverHelper;
   }
 
   public registerRoutes() {
-    return this.server.app
+    return this.serverHelper.app
       .openapi(
         createRoute({
           method: "get",

@@ -7,7 +7,7 @@
   "scripts": {
     "node": "node --experimental-strip-types --no-deprecation --no-warnings",
     "lint:biome": "biome lint .",
-    "lint:eslint": "npx --node-options='--experimental-strip-types' eslint --max-warnings=0 --flag unstable_ts_config",
+    "lint:eslint": "node --experimental-strip-types node_modules/.bin/eslint --max-warnings=0 --flag unstable_ts_config",
     "format:prettier": "prettier --write .",
     "prepare": "lefthook install",
     "generate-all-swagger-apis": "bun run node ./packages/libs/devex/src/generate-all-swagger-apis.ts",
@@ -21,13 +21,14 @@
     "#libs/unit-test-infra": "./packages/libs/unit-test-infra/index.ts"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.36.0",
     "@hono/node-server": "^1.14.4",
     "@hono/swagger-ui": "^0.5.2",
     "@hono/zod-openapi": "^0.19.8",
     "hono": "^4.8.1",
     "lodash": "^4.17.21",
-    "zod": "^3.25.67",
-    "@dotenvx/dotenvx": "^1.36.0"
+    "tsyringe": "^4.10.0",
+    "zod": "^3.25.67"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.0",
