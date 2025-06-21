@@ -24,14 +24,17 @@ export class ServerHelper {
     });
   }
 
+  public static buildUrl(info: AddressInfo): string {
+    return `http://localhost:${info.port.toString()}`;
+  }
+
   public async start(port: number): Promise<AddressInfo> {
     const info = await new Promise<AddressInfo>((resolve) => {
       serve({ fetch: this.app.fetch, port }, resolve);
     });
 
-    console.log(
-      `🚀 server running on http://localhost:${info.port.toString()}`,
-    );
+    console.log(`🚀 server running on ${ServerHelper.buildUrl(info)}`);
+    console.log(`🚀 Swagger UI running on ${ServerHelper.buildUrl(info)}/ui`);
 
     return info;
   }

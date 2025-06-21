@@ -17,6 +17,4 @@ const routes = serverHandler.registerRoutes();
 
 const info = await severHelper.start(3000);
 
-export const server1AppClient = hc<typeof routes>(
-  `${info.family}://${info.address}:${info.port.toString()}`,
-);
+export const server1AppClient = hc<typeof routes>(ServerHelper.buildUrl(info));

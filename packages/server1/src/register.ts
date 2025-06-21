@@ -7,7 +7,9 @@ export function register(appContainer: DependencyContainer): void {
   appContainer.register("AppName", {
     useValue: path.basename(path.dirname(import.meta.dirname)),
   });
-  appContainer.register(ServerHelper, { useClass: ServerHelper });
+  appContainer.register(ServerHelper, {
+    useFactory: (c) => new ServerHelper(c.resolve("AppName")),
+  });
   appContainer.register(Server1Handler, {
     useFactory: (c) => new Server1Handler(c.resolve(ServerHelper)),
   });
