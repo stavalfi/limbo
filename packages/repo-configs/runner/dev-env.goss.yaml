@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/goss-org/goss/master/docs/schema.yaml
+
+http:
+  service1:
+    method: "GET"
+    url: http://localhost:{{ .Env.SERVICE1_PORT }}
+    status: 200
+    body:
+      - '{"status":"OK"}'

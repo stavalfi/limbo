@@ -1,0 +1,2 @@
+service1: bun run node packages/service1/main.ts
+liveness: bun run start:liveness:watch

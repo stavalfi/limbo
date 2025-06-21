@@ -5,7 +5,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start:server1:watch": "bun run node --watch packages/server1/main.ts",
+    "start:service1:watch": "dotenvx run --strict --env-file packages/repo-configs/runner/runner.env -- goreman --set-ports=false --rpc-server=false --exit-on-error --logtime=true -f packages/repo-configs/runner/procfile start",
+    "start:liveness:watch": "bun run node --watch packages/libs/devex/src/liveness-check.ts",
     "node": "node --experimental-strip-types --no-deprecation --no-warnings",
     "lint:biome": "biome lint .",
     "lint:eslint": "node --experimental-strip-types node_modules/.bin/eslint --max-warnings=0 --flag unstable_ts_config",
@@ -17,7 +18,7 @@
     "find-circular-imports": "madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
   },
   "imports": {
-    "#libs/server-helper": "./packages/libs/server-helper/index.ts",
+    "#libs/service-helper": "./packages/libs/service-helper/index.ts",
     "#libs/devex": "./packages/libs/devex/index.ts",
     "#libs/unit-test-infra": "./packages/libs/unit-test-infra/index.ts"
   },
@@ -41,7 +42,7 @@
     "@types/jsonwebtoken": "^9.0.7",
     "@types/lodash": "^4.17.9",
     "@types/madge": "^5.0.3",
-    "@types/node": "22.9.3",
+    "@types/node": "24.0.0",
     "@types/node-cleanup": "^2.1.5",
     "@typescript/native-preview": "^7.0.0-dev.20250620.1",
     "eslint": "9.10.0",

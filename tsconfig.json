@@ -12,6 +12,7 @@
     "allowJs": false,
     "target": "esnext",
     "module": "nodenext",
+    "moduleResolution": "nodenext",
     "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
     "esModuleInterop": true,

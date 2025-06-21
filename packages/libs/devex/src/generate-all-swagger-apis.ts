@@ -8,22 +8,25 @@ import { rootDirPath } from "./root-dir-path.ts";
 
 const execAsync = promisify(exec);
 
-const swaggerJsonPath = path.join(rootDirPath, "packages/server1/swagger.json");
+const swaggerJsonPath = path.join(
+  rootDirPath,
+  "packages/service1/swagger.json",
+);
 const serverOutputDir = path.join(
   rootDirPath,
-  "output/packages/server1/swagger/server",
+  "output/packages/service1/swagger/server",
 );
 
 await fs.promises.mkdir(serverOutputDir, { recursive: true });
 
 await Promise.all([
   execAsync(
-    `bunx openapi-glue --project-name=server1 --base-dir=${serverOutputDir} ${swaggerJsonPath}`,
+    `bunx openapi-glue --project-name=service1 --base-dir=${serverOutputDir} ${swaggerJsonPath}`,
     { cwd: rootDirPath },
   ),
   generateApi({
     input: swaggerJsonPath,
-    output: path.join(rootDirPath, "output/packages/server1/swagger/client"),
+    output: path.join(rootDirPath, "output/packages/service1/swagger/client"),
     addReadonly: true,
     anotherArrayType: true,
     compilerTsConfig: tsconfig.compilerOptions,
