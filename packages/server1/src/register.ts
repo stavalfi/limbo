@@ -17,7 +17,7 @@ export async function register(appContainer: DependencyContainer) {
   const severHelper = appContainer.resolve(ServerHelper);
   const serverHandler = appContainer.resolve(Server1Handler);
 
-  const routes = serverHandler.registerRoutes(severHelper.app);
+  const routes = serverHandler.registerRoutes();
 
   const info = await severHelper.start(3000);
 
