@@ -1,7 +1,7 @@
 import type { AddressInfo } from "node:net";
 import { serve } from "@hono/node-server";
 import { swaggerUI } from "@hono/swagger-ui";
-import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { OpenAPIHono } from "@hono/zod-openapi";
 export class ServerHelper {
   public readonly app: OpenAPIHono = new OpenAPIHono({ strict: true });
   public readonly appName: string;

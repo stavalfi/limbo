@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start:server1:watch": "bun run --watch packages/server1/main.ts",
+    "start:server1:watch": "bun run node --watch packages/server1/main.ts",
     "node": "node --experimental-strip-types --no-deprecation --no-warnings",
     "lint:biome": "biome lint .",
     "lint:eslint": "node --experimental-strip-types node_modules/.bin/eslint --max-warnings=0 --flag unstable_ts_config",

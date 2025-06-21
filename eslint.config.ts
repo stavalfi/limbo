@@ -34,6 +34,9 @@ export default config(
       "unused-imports": unusedImports,
     },
   },
+  {
+    ignores: [".devbox", "output"],
+  },
   // extends ...
   importPlugin.flatConfigs.recommended,
   eslint.configs.recommended,
@@ -41,7 +44,6 @@ export default config(
   configs.strict,
   configs.strictTypeChecked,
   {
-    ignores: ["**/*.json"],
     rules: {
       "import/no-named-as-default-member": "off",
       "unused-imports/no-unused-vars": "off",

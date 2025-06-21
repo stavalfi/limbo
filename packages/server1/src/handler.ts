@@ -1,5 +1,4 @@
-import { createRoute, type OpenAPIHono, z } from "@hono/zod-openapi";
-import type { Env } from "hono";
+import { createRoute, z } from "@hono/zod-openapi";
 import { type ServerHelper } from "#libs/server-helper";
 
 export class Server1Handler {
@@ -8,9 +7,8 @@ export class Server1Handler {
     this.serverHelper = serverHelper;
   }
 
-  public registerRoutes(app: OpenAPIHono<Env, {}, "/">) {
-    console.log("stav1", this.serverHelper.app === app);
-    return app
+  public registerRoutes() {
+    return this.serverHelper.app
       .openapi(
         createRoute({
           method: "get",
