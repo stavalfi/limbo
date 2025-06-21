@@ -11,23 +11,28 @@
     "format:prettier": "prettier --write .",
     "prepare": "lefthook install",
     "generate-all-swagger-apis": "bun run node ./packages/libs/devex/src/generate-all-swagger-apis.ts",
-    "build": "tsgo --erasableSyntaxOnly",
+    "build": "tsc --erasableSyntaxOnly",
     "build:watch": "bun run build --watch",
     "find-circular-imports": "madge --circular --ts-config ./tsconfig.json --extensions 'ts,tsx' --exclude 'node_modules|.devbox' *"
   },
   "imports": {
-    "#libs/*": "./packages/libs/lib1/index.ts",
-    "#libs/lib2": "./packages/libs/lib2/index.ts",
+    "#libs/server-helper": "./packages/libs/server-helper/index.ts",
     "#libs/devex": "./packages/libs/devex/index.ts",
     "#libs/unit-test-infra": "./packages/libs/unit-test-infra/index.ts"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "@hono/node-server": "^1.14.4",
+    "@hono/swagger-ui": "^0.5.2",
+    "@hono/zod-openapi": "^0.19.8",
+    "hono": "^4.8.1",
+    "lodash": "^4.17.21",
+    "zod": "^3.25.67",
+    "@dotenvx/dotenvx": "^1.36.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.0",
-    "@dotenvx/dotenvx": "^1.36.0",
     "@eslint/js": "^9.17.0",
+    "@hey-api/openapi-ts": "^0.74.0",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint__js": "^8.42.3",
     "@types/find-root": "^1.1.4",

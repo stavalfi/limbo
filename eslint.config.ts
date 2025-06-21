@@ -44,7 +44,19 @@ export default config(
     ignores: ["**/*.json"],
     rules: {
       "import/no-named-as-default-member": "off",
-      "unused-imports/no-unused-vars": "error",
+      "unused-imports/no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          args: "all",
+          argsIgnorePattern: "^_",
+          caughtErrors: "all",
+          caughtErrorsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+          varsIgnorePattern: "^(?:_|routes)$",
+          ignoreRestSiblings: true,
+        },
+      ],
       "unused-imports/no-unused-imports": "error",
       "require-await": "off", // must be disabled to make @typescript-eslint/require-await work
       "@typescript-eslint/require-await": "error",
@@ -83,7 +95,10 @@ export default config(
       ],
       "@typescript-eslint/unbound-method": "error",
       "@typescript-eslint/no-inferrable-types": "error",
-      "@typescript-eslint/explicit-module-boundary-types": "error",
+      "@typescript-eslint/explicit-module-boundary-types": [
+        "error",
+        { allowedNames: ["registerRoutes"] },
+      ],
       "no-useless-escape": "error",
       "@typescript-eslint/no-namespace": "error",
       "no-empty": [
