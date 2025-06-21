@@ -97,7 +97,7 @@ export default config(
       "@typescript-eslint/no-inferrable-types": "error",
       "@typescript-eslint/explicit-module-boundary-types": [
         "error",
-        { allowedNames: ["registerRoutes"] },
+        { allowedNames: ["registerRoutes", "register"] },
       ],
       "no-useless-escape": "error",
       "@typescript-eslint/no-namespace": "error",
